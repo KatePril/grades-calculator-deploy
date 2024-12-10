@@ -40,7 +40,7 @@ class _GradeCellState extends State<GradeCell> {
         ),
         controller: gradeController,
         onChanged: (value) {
-          widget.onGradeChanged(value);
+          widget.onGradeChanged(gradeController.text);
         },
       ),
     );
