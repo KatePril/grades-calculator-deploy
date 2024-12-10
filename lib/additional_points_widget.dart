@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grades_calculator/additional_points.dart';
+import 'package:grades_calculator/entities/additional_points.dart';
 import 'package:grades_calculator/grade_cell.dart';
 
 class AdditionalPointsWidget extends StatefulWidget {
@@ -84,6 +84,7 @@ class _AdditionalPointsWidgetState extends State<AdditionalPointsWidget> {
                   child: IconButton(
                     color: Theme.of(context).colorScheme.inversePrimary,
                     icon: const Icon(Icons.add),
+                    tooltip: "Add points",
                     onPressed: () {
                       setState(() {
                         widget.additionalPoints.points.add("0");

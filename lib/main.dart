@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:grades_calculator/additional_points.dart';
+import 'package:grades_calculator/entities/additional_points.dart';
 import 'package:grades_calculator/additional_points_widget.dart';
-import 'package:grades_calculator/subject.dart';
+import 'package:grades_calculator/entities/subject.dart';
 import 'package:grades_calculator/subject_widget.dart';
+import 'package:grades_calculator/title_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -75,40 +76,19 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Row(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 4.0),
-              decoration: BoxDecoration(
-                color:Theme.of(context).colorScheme.secondary,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: Text(
-                "Average academic grade: $avg",
-                style: const TextStyle(color: Colors.white),
-              ),
+            TitleWidget(
+              text: "Average academic grade: $avg",
+              color: Theme.of(context).colorScheme.secondary,
             ),
             const Spacer(),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 4.0),
-              decoration: BoxDecoration(
-                color:Theme.of(context).colorScheme.secondary,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: Text(
-                "Additional points: $points",
-                style: const TextStyle(color: Colors.white),
-              ),
+            TitleWidget(
+              text: "Additional points: $points",
+              color: Theme.of(context).colorScheme.secondary,
             ),
             const Spacer(),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 4.0),
-              decoration: BoxDecoration(
-                color:Theme.of(context).colorScheme.primary,
-                borderRadius: BorderRadius.circular(12.0),
-              ),
-              child: Text(
-                "Total score: $total",
-                style: const TextStyle(color: Colors.white),
-              ),
+            TitleWidget(
+              text: "Total score: $total",
+              color: Theme.of(context).colorScheme.primary,
             ),
           ],
         ),
@@ -130,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SizedBox(
-                width: double.infinity, // Make the widget take full width
+                width: double.infinity,
                 child: AdditionalPointsWidget(
                   additionalPoints: additionalPoints,
                   onGradeChanged: _multipliedPoints,

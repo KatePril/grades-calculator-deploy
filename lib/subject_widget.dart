@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grades_calculator/grade_cell.dart';
-import 'package:grades_calculator/subject.dart';
+import 'package:grades_calculator/entities/subject.dart';
 
 class SubjectWidget extends StatefulWidget {
   final Subject subject;
@@ -91,6 +91,7 @@ class _SubjectWidgetState extends State<SubjectWidget> {
                   width: 80,
                   child: IconButton(
                     icon: const Icon(Icons.add),
+                    tooltip: "Add grade",
                     onPressed: () {
                       setState(() {
                         widget.subject.grades.add("0");
