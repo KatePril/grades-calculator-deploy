@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grades_calculator/grade_cell.dart';
+import 'package:grades_calculator/widgets/grade_cell.dart';
 import 'package:grades_calculator/entities/subject.dart';
 
 class SubjectWidget extends StatefulWidget {
@@ -59,13 +59,13 @@ class _SubjectWidgetState extends State<SubjectWidget> {
                 Container(
                   padding: const EdgeInsets.all(8.0),
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary, // Green background
+                    color: Theme.of(context).colorScheme.primary,
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   child: Text(
                     "Total: ${widget.subject.total().toStringAsFixed(1)}",
                     style: const TextStyle(
-                      color: Colors.white, // White text color
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -80,24 +80,22 @@ class _SubjectWidgetState extends State<SubjectWidget> {
                 for (int i = 0; i < widget.subject.grades.length; i++)
                   GradeCell(
                     grade: widget.subject.grades[i],
-                    onGradeChanged: (newGrade) {
+                    onGradeChanged: (newGrade) =>
                       setState(() {
                         widget.subject.grades[i] = newGrade;
                         widget.onGradeChanged();
-                      });
-                    },
+                      }),
                   ),
                 SizedBox(
                   width: 80,
                   child: IconButton(
                     icon: const Icon(Icons.add),
                     tooltip: "Add grade",
-                    onPressed: () {
+                    onPressed: () =>
                       setState(() {
                         widget.subject.grades.add("0");
                         widget.onGradeChanged();
-                      });
-                    },
+                      }),
                   ),
                 ),
               ],

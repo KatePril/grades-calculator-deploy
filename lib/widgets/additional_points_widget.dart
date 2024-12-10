@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grades_calculator/entities/additional_points.dart';
-import 'package:grades_calculator/grade_cell.dart';
+import 'package:grades_calculator/widgets/grade_cell.dart';
 
 class AdditionalPointsWidget extends StatefulWidget {
   final Function onGradeChanged;
@@ -17,16 +17,6 @@ class AdditionalPointsWidget extends StatefulWidget {
 }
 
 class _AdditionalPointsWidgetState extends State<AdditionalPointsWidget> {
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -72,12 +62,11 @@ class _AdditionalPointsWidgetState extends State<AdditionalPointsWidget> {
                 for (int i = 0; i < widget.additionalPoints.points.length; i++)
                   GradeCell(
                     grade: widget.additionalPoints.points[i],
-                    onGradeChanged: (newGrade) {
+                    onGradeChanged: (newGrade) =>
                       setState(() {
                         widget.additionalPoints.points[i] = newGrade;
                         widget.onGradeChanged();
-                      });
-                    },
+                      }),
                   ),
                 SizedBox(
                   width: 80,
@@ -85,12 +74,11 @@ class _AdditionalPointsWidgetState extends State<AdditionalPointsWidget> {
                     color: Theme.of(context).colorScheme.inversePrimary,
                     icon: const Icon(Icons.add),
                     tooltip: "Add points",
-                    onPressed: () {
+                    onPressed: () =>
                       setState(() {
                         widget.additionalPoints.points.add("0");
                         widget.onGradeChanged();
-                      });
-                    },
+                      }),
                   ),
                 ),
               ],
