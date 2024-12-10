@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void _updateTotal() {
-    total = avg + points;
+    total = avg * 0.95 + points;
   }
 
   @override
