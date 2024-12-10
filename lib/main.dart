@@ -91,9 +91,12 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: AdditionalPointsWidget(
-                additionalPoints: additionalPoints,
-                onGradeChanged: _multipliedPoints,
+              child: SizedBox(
+                width: double.infinity, // Make the widget take full width
+                child: AdditionalPointsWidget(
+                  additionalPoints: additionalPoints,
+                  onGradeChanged: _multipliedPoints,
+                ),
               ),
             ),
           ],

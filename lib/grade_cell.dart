@@ -35,8 +35,13 @@ class _GradeCellState extends State<GradeCell> {
       width: 80,
       child: TextField(
         keyboardType: TextInputType.number,
-        decoration: const InputDecoration(
-          labelText: 'Grade',
+        decoration: InputDecoration(
+          fillColor: Theme.of(context).colorScheme.secondaryContainer,
+          filled: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide.none,
+          ),
         ),
         controller: gradeController,
         onChanged: (value) {
