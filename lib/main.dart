@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void avgGrade() {
+  void avgAcademicGrade() {
     double sumGrade = subjects
         .map((subject) => subject.total())
         .reduce((a, b) => a + b);
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Your avg grade is: $avg"),
+        title: Text("Your average academic grade is: $avg; additional points: "),
       ),
       body: Center(
         child: ListView.builder(
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (context, index) {
             return SubjectWidget(
               subject: subjects[index],
-              onGradeChanged: avgGrade,
+              onGradeChanged: avgAcademicGrade,
             );
           },
         ),
