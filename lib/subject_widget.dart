@@ -56,10 +56,19 @@ class _SubjectWidgetState extends State<SubjectWidget> {
                   ),
                 ),
                 const SizedBox(width: 8),
-                // Total Score
-                Text(
-                  'Total: ${widget.subject.total()}',
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                Container(
+                  padding: const EdgeInsets.all(8.0),
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary, // Green background
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  child: Text(
+                    "Total: ${widget.subject.total().toStringAsFixed(1)}",
+                    style: const TextStyle(
+                      color: Colors.white, // White text color
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),
