@@ -73,7 +73,45 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Your average academic grade is: $avg; additional points: $points"),
+        title: Row(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 4.0),
+              decoration: BoxDecoration(
+                color:Theme.of(context).colorScheme.secondary,
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Text(
+                "Average academic grade: $avg",
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+            const Spacer(),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 4.0),
+              decoration: BoxDecoration(
+                color:Theme.of(context).colorScheme.secondary,
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Text(
+                "Additional points: $points",
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+            const Spacer(),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 4.0),
+              decoration: BoxDecoration(
+                color:Theme.of(context).colorScheme.primary,
+                borderRadius: BorderRadius.circular(12.0),
+              ),
+              child: Text(
+                "Total score: $total",
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
+        ),
       ),
       body: Center(
         child: Column(
