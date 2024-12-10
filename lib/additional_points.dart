@@ -2,7 +2,7 @@ class AdditionalPoints {
   String title = "";
   List<String> points = List.empty(growable: true);
 
-  double parseGrade(String grade) {
+  double parsePoint(String grade) {
     try {
       return double.parse(grade);
     } catch (object) {
@@ -14,6 +14,6 @@ class AdditionalPoints {
     if (points.isEmpty) {
       return 0;
     }
-    return points.map(parseGrade).reduce((a, b) => a + b) * 0.05;
+    return points.map(parsePoint).reduce((a, b) => a + b);
   }
 }
