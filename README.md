@@ -1,16 +1,11 @@
-# grades_calculator
+## This is the calculator of student's rating score
 
-A new Flutter project.
+User can add subject and grades for this subject as well as change subject title. The app will calculate the total score for the subject.<br>
+The app sums total score of all subjects and calculates the average academic score<br>
+Student can also add all the addtional points earned. The app will calculate the sum of the points.<br>
 
-## Getting Started
+The app calculates final student's rating score using formula:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+{average academic score} * 0.95 + {sum of the additional points} * 0.05
+```
