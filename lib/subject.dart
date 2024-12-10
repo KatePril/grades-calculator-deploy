@@ -11,6 +11,9 @@ class Subject {
   }
 
   double total() {
+    if (grades.isEmpty) {
+      return 0;
+    }
     return grades.map(parseGrade).reduce((a, b) => a + b);
   }
 }

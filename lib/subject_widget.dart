@@ -40,16 +40,28 @@ class _SubjectWidgetState extends State<SubjectWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            TextField(
-              controller: titleController,
-              decoration: const InputDecoration(
-                labelText: 'Subject Title',
-              ),
-              onChanged: (value) {
-                setState(() {
-                  widget.subject.title = value;
-                });
-              },
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: titleController,
+                    decoration: const InputDecoration(
+                      labelText: 'Subject Title',
+                    ),
+                    onChanged: (value) {
+                      setState(() {
+                        widget.subject.title = value;
+                      });
+                    },
+                  ),
+                ),
+                const SizedBox(width: 8),
+                // Total Score
+                Text(
+                  'Total: ${widget.subject.total()}',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
             const SizedBox(height: 10),
             Wrap(
